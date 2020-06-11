@@ -6,7 +6,7 @@
     max-width: 70%;
     height:100%;
     z-index:200;
-    background-color: #000;
+    background-color: #fff;
     padding:32px 16px;
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
@@ -26,4 +26,8 @@
 
 .Close{
     transform: translateX(-100%);
+}
+
+.Logo{
+    height:11%;
 }
