@@ -1,5 +1,8 @@
 # BURGER BUILDER
 
+## Screenshot 1 : 
+![rsz_screenshot_182](https://user-images.githubusercontent.com/32910597/84560487-61f3f680-ad62-11ea-8382-3d0592e62a66.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
