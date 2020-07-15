@@ -72,13 +72,18 @@ class ContactData extends Component {
 
     orderHandler = (event) =>{
         event.preventDefault();
-        console.log(this.props);
+       // console.log(this.props);
         
     this.setState({loading:true});
+    const formData={};
+    for (let formElementIdentifier in this.state.orderForm){
+        formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
+    }
 
     const order = {
         ingredients : this.props.ingredients,
-        price:this.props.price
+        price:this.props.price,
+        orderData:formData
        
         }
     
@@ -120,14 +125,14 @@ class ContactData extends Component {
                 config:this.state.orderForm[key]
             });
         }
-        let form =(<form>
+        let form =(<form onSubmit={this.orderHandler}>
             {formElementsArray.map(formElement=>(
                  <Input elementType={formElement.config.elementType}  elementConfig={formElement.config.elementConfig}
                   value={formElement.config.value} key={formElement.id} changed={ (event)=>this.inputChangeHandler(event,formElement.id)} />
           
             ))}
            
-            <Button btnType="Success" clicked={this.orderHandler}>ORDER</Button>
+            <Button btnType="Success" >ORDER</Button>
         </form>);
         if (this.state.loading){
             form=<Spinner/>;
