@@ -9,7 +9,7 @@ const initialState  = {
     totalPrice:4
 };
 
-const reducer = (state = initial state, action) => {
+const reducer = (state = initialState, action) => {
 
     switch(action.type){
         case actionsTypes.ADD_INGREDIENT:
