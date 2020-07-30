@@ -36,6 +36,21 @@ const reducer = (state = initialState, action) => {
 
             };
 
+        case actionsTypes.SET_INGREDIENTS:
+            return{
+                ...state,
+                ingredients:action.ingredients,
+                error:false
+            };
+    
+
+        case actionsTypes.FETCH_INGREDIENTS_FAILED:
+
+            return {...state,
+                error:true
+
+            };
+
         default: return state;
     }
 
