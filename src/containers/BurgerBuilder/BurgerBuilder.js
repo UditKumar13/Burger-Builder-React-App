@@ -16,19 +16,11 @@ class BurgerBuilder extends Component{
 
     state={
         purchasing:false,
-        loading:false,
-        error:false
-
     }
 
     componentDidMount(){
         console.log(this.props);
-        // axios.get('https://react-my-burger-72df3.firebaseio.com/ingredients.json')
-        // .then(response=>{
-        //     this.setState({ingredients:response.data});
-            
-        // })
-        // .catch(error=>{this.setState({error:true})});
+       
     }
 
     updatePurchasableState(ingredients){
@@ -89,8 +81,6 @@ class BurgerBuilder extends Component{
 
     purchasedHandler = () =>{
         this.setState({purchasing:true});
-
-
     }
 
     purchaseCancelHandler =()=>{
@@ -152,9 +142,7 @@ class BurgerBuilder extends Component{
         price={this.props.price}/> ;
                
         } 
-        if (this.state.loading){
-            ordersummary = <Spinner/>;
-        }
+        
         
         
         return (
