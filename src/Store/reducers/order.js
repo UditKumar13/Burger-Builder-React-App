@@ -16,7 +16,7 @@ const reducer = (state=initialState,action) =>{
                 ...action.orderData,
                 id:action.orderId
             }
-            return{....state,
+            return{...state,
             loading:false,
             orders:state.orders.concat(newOrder)};
         case actionTypes.PURCHASE_BURGER_FAIL:
@@ -26,3 +26,5 @@ const reducer = (state=initialState,action) =>{
     };
 
 };
+
+export default reducer;
