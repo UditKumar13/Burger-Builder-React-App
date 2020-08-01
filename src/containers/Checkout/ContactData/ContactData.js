@@ -94,7 +94,8 @@ class ContactData extends Component {
                                     displayValue:'Cheapest'}
                             ],
                             type:'text',
-                            placeholder:'Your Name'
+                            placeholder:'Your Name',
+                            value:'fastest'
                         },
                         valid:true,
                         validaton:{},
