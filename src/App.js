@@ -3,7 +3,7 @@ import Layout from '../src/hoc/Layout/Layout';
 import '../src/index.css';
 import BurgerBuilder from '../src//containers/BurgerBuilder/BurgerBuilder';
 import Checkout from './containers/Checkout/Checkout';
-import {Route,Switch} from 'react-router-dom';
+import {Route,Switch,withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Orders from './containers/Orders/Orders';
 import Auth from './containers/Auth/Auth';
@@ -15,7 +15,7 @@ import * as actions from './Store/actions/index';
 class App extends Component {
 
   componentDidMount(){
-    this.props.onTryAutoSignup();
+    this.props.onTryAutoSignup(); 
   }
 
   render(){
@@ -37,7 +37,7 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch =>{
   return {
-    onTryAutoSignup:()=> dispatch(actions.authCheckState);
+    onTryAutoSignup:()=> dispatch(actions.authCheckState)
   };
 };
-export default connect(null,mapDispatchToProps)(App);
+export default withRouter(connect(null,mapDispatchToProps)(App));
