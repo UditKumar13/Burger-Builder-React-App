@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import {updateObject} from '../utility';
+import {updateObject} from '../../shared/utility';
 import { setAuthRedirecPath } from '../actions/auth';
 const initialState={
 token:null,
