@@ -10,7 +10,7 @@ import orderReducer from './Store/reducers/order';
 import thunk from 'redux-thunk';
 import * as serviceWorker from './serviceWorker';
 import authReducer from './Store/reducers/auth';
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = process.env.NODE_ENV==='development'?window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__:null || compose;
 const rootReducer = combineReducers({
   burgerBuilder:burgerBuilderReducer,
   order:orderReducer,
