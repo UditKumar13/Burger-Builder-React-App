@@ -12,7 +12,7 @@ import * as actions from '../../Store/actions/index';
 
 
 
-class BurgerBuilder extends Component{
+export class BurgerBuilder extends Component{
 
     state={
         purchasing:false,
