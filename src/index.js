@@ -8,8 +8,10 @@ import {createStore,applyMiddleware,compose,combineReducers} from 'redux';
 import burgerBuilderReducer from './Store/reducers/burgerBuilder';
 import orderReducer from './Store/reducers/order';
 import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 import * as serviceWorker from './serviceWorker';
 import authReducer from './Store/reducers/auth';
+import {logoutSaga } from './Store/sagas/auth'; 
 const composeEnhancers = process.env.NODE_ENV==='development'?window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__:null || compose;
 const rootReducer = combineReducers({
   burgerBuilder:burgerBuilderReducer,
@@ -17,9 +19,13 @@ const rootReducer = combineReducers({
   auth:authReducer
 
 });
+
+const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, composeEnhancers(
-  applyMiddleware(thunk)
+  applyMiddleware(thunk,sagaMiddleware)
 ));
+
+sagaMiddleware.run(logoutSaga);
 
 
 const app = (

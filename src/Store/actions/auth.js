@@ -94,7 +94,7 @@ export const authCheckState = () =>{
             }
 
             else{
-                dispatch(logout());
+               dispatch(logout());
             }
         }
     }
